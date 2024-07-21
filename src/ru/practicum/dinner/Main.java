@@ -25,6 +25,9 @@ public class Main {
                     break;
                 case "3":
                     return;
+                default:
+                    System.out.println("Invalid command");
+                    break;
             }
         }
     }
@@ -50,7 +53,12 @@ public class Main {
 
         System.out.println("Введите количество наборов, которые нужно сгенерировать:");
         int numberOfCombos = scanner.nextInt();
+        while (numberOfCombos <= 0) {
+            System.out.println("Пожалуйста, введите положительное целое число.");
+            numberOfCombos = scanner.nextInt();
+        }
         scanner.nextLine();  // Consume newline
+
 
         System.out.println("Вводите типы блюда, разделяя символом переноса строки (enter). Для завершения ввода введите пустую строку");
         ArrayList<String> dishTypes = new ArrayList<>();
